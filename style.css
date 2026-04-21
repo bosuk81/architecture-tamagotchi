@@ -1,0 +1,326 @@
+:root {
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --ink: #1f2a37;
+  --muted: #5f6b7a;
+  --accent: #3f7fff;
+  --accent-soft: #dbe8ff;
+  --ok: #2b9a6a;
+  --warn: #f5a524;
+  --danger: #d64545;
+  --line: #d9e0ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: linear-gradient(180deg, #eef3ff 0%, var(--bg) 40%);
+}
+
+.app {
+  max-width: 1100px;
+  margin: 1.2rem auto;
+  padding: 0 1rem 1.5rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 5px 16px rgba(20, 30, 50, 0.06);
+}
+
+.topbar {
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.subtitle {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+}
+
+.date-box {
+  font-size: 0.95rem;
+  background: var(--accent-soft);
+  border: 1px solid #c6d8ff;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem;
+  min-width: 220px;
+}
+
+.start-screen,
+.end-screen {
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+.start-screen label,
+.field-label {
+  display: block;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+input[type="text"] {
+  margin-top: 0.35rem;
+  width: 100%;
+  max-width: 340px;
+  padding: 0.55rem 0.6rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.gender-group {
+  display: flex;
+  gap: 1rem;
+  margin: 0.35rem 0 0.8rem;
+}
+
+.small-note {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.btn {
+  border: 1px solid #c9d6f8;
+  background: #f3f7ff;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn:hover {
+  filter: brightness(0.98);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: #2a64dd;
+}
+
+.layout-grid {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1rem;
+}
+
+.student-panel,
+.stats-panel,
+.actions-panel,
+.minigame-panel {
+  padding: 0.9rem 1rem;
+}
+
+.student-panel,
+.minigame-panel {
+  grid-column: span 2;
+}
+
+.student-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pill {
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: #eef4ff;
+  border: 1px solid #cad8fb;
+  font-size: 0.86rem;
+}
+
+.studio-scene {
+  margin-top: 0.8rem;
+  border: 1px dashed #c7d3ea;
+  border-radius: 12px;
+  padding: 1rem;
+  min-height: 180px;
+  background: #f9fbff;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+.avatar {
+  width: 130px;
+  height: 150px;
+  border-radius: 18px;
+  position: relative;
+  border: 2px solid #31486e;
+  background: #fefefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  background: #ffd9b4;
+  border: 2px solid #324862;
+}
+
+.avatar::after {
+  content: "📏";
+  position: absolute;
+  right: -10px;
+  bottom: 12px;
+  font-size: 1.4rem;
+}
+
+.avatar .body {
+  position: absolute;
+  bottom: 8px;
+  width: 90px;
+  height: 75px;
+  border-radius: 12px;
+  border: 2px solid #2d4466;
+}
+
+.avatar.male {
+  background: linear-gradient(180deg, #ffffff 0 52%, #d5ecff 52% 100%);
+}
+
+.avatar.male::before {
+  box-shadow: inset 0 14px 0 #2b2c3d;
+}
+
+.avatar.male .body {
+  background: #9dccff;
+}
+
+.avatar.female {
+  background: linear-gradient(180deg, #ffffff 0 50%, #ffe1f1 50% 100%);
+}
+
+.avatar.female::before {
+  box-shadow: inset 0 20px 0 #5b3a31;
+}
+
+.avatar.female .body {
+  background: #ffb8d8;
+}
+
+.desk {
+  flex: 1;
+  margin-left: 1rem;
+  border-radius: 10px;
+  border: 2px solid #7f8ea4;
+  min-height: 58px;
+  background: linear-gradient(180deg, #eceff5, #dadfe8);
+  display: flex;
+  align-items: center;
+  padding-left: 0.8rem;
+}
+
+.stats {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.stat-row {
+  display: grid;
+  grid-template-columns: 92px 1fr 40px;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.bar {
+  height: 11px;
+  border-radius: 8px;
+  border: 1px solid #c6d0e1;
+  background: #eef2f8;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  width: 50%;
+  background: var(--ok);
+}
+
+.actions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 0.45rem;
+}
+
+.action-btn {
+  text-align: left;
+  line-height: 1.2;
+}
+
+.status-text {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.mini-controls {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.mini-area {
+  margin-top: 0.65rem;
+  border: 1px solid #c6d1e6;
+  border-radius: 10px;
+  background: #f8fbff;
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid #7aa4f8;
+  background: radial-gradient(circle at 30% 30%, #ffffff, #97bcff);
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .student-panel,
+  .minigame-panel {
+    grid-column: span 1;
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
