@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture Tamagotchi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar card">
+      <div>
+        <h1>Studio Survivor: Final Review Edition</h1>
+        <p class="subtitle">Help your architecture student make it to final review day.</p>
+      </div>
+      <div class="date-box">
+        <div><strong>Final Review:</strong> <span id="finalDateText">May 6, 2026</span></div>
+        <div><strong>Countdown:</strong> <span id="countdown">--</span></div>
+      </div>
+    </header>
+
+    <section id="startScreen" class="card start-screen">
+      <h2>Set up your studio hero</h2>
+      <label for="studentName">Student Name</label>
+      <input id="studentName" type="text" maxlength="20" placeholder="e.g., Alex" />
+
+      <p class="field-label">Gender</p>
+      <div class="gender-group" role="radiogroup" aria-label="Gender selection">
+        <label><input type="radio" name="gender" value="male" checked /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+      </div>
+
+      <button id="startBtn" class="btn btn-primary">Start Semester Crunch</button>
+      <p class="small-note">Tip: Keep Sleep, Energy, and Health from crashing while pushing Progress to the deadline.</p>
+    </section>
+
+    <section id="gameScreen" class="hidden">
+      <div class="layout-grid">
+        <section class="card student-panel">
+          <div class="student-header">
+            <h2 id="studentDisplayName">Student</h2>
+            <span id="timeLabel" class="pill">Day 1 • 10:00 AM</span>
+          </div>
+
+          <div class="studio-scene">
+            <div id="studentAvatar" class="avatar" aria-label="Architecture student avatar"></div>
+            <div class="desk">
+              <div class="desk-items">📐 ✏️ 📏 💻 🧻</div>
+            </div>
+          </div>
+
+          <p id="statusText" class="status-text">Welcome to studio. The crit gods are watching.</p>
+        </section>
+
+        <section class="card stats-panel">
+          <h3>Studio Stats</h3>
+          <div class="stats" id="statsContainer"></div>
+        </section>
+
+        <section class="card actions-panel">
+          <h3>Support Actions</h3>
+          <div id="actionsContainer" class="actions-grid"></div>
+        </section>
+
+        <section class="card minigame-panel">
+          <h3>Stress Relief Mini Game: Bubble Pop</h3>
+          <p>Click as many bubbles as you can in 8 seconds to calm pre-crit panic.</p>
+          <div class="mini-controls">
+            <button id="startMiniBtn" class="btn">Start Mini Game</button>
+            <span id="miniScore">Score: 0</span>
+            <span id="miniTimer">Time: 0</span>
+          </div>
+          <div id="miniArea" class="mini-area" aria-label="Mini game area"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="endScreen" class="card hidden end-screen">
+      <h2 id="endTitle"></h2>
+      <p id="endMessage"></p>
+      <button id="restartBtn" class="btn btn-primary">Play Again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
