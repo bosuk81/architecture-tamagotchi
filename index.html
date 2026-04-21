@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Survivor: Architecture Tamagotchi</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar card">
+      <div>
+        <h1>Studio Survivor</h1>
+        <p class="subtitle">A tiny desk companion for architecture final review season.</p>
+      </div>
+      <div class="time-panel">
+        <div><strong>Current Local Time:</strong> <span id="liveClock">--</span></div>
+        <div><strong>Final Review:</strong> May 6, 2026</div>
+        <div><strong>Countdown:</strong> <span id="countdown">--</span></div>
+      </div>
+    </header>
+
+    <section id="startScreen" class="card start-screen">
+      <h2>Set up your studio student</h2>
+      <label for="studentName">Student Name</label>
+      <input id="studentName" type="text" maxlength="24" placeholder="e.g., Mina" />
+
+      <p class="field-label">Gender</p>
+      <div class="gender-group" role="radiogroup" aria-label="Gender selection">
+        <label><input type="radio" name="gender" value="male" checked /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+      </div>
+
+      <button id="startBtn" class="btn btn-primary">Start Desk Life</button>
+      <p class="small-note">Keep the student functional and calm until final review day.</p>
+    </section>
+
+    <section id="gameScreen" class="hidden">
+      <div class="layout-grid">
+        <section class="card scene-panel">
+          <div class="scene-header">
+            <h2 id="studentDisplayName">Student</h2>
+            <div class="pill-group">
+              <span id="periodLabel" class="pill">Current phase: --</span>
+              <span id="clockLabel" class="pill">--</span>
+            </div>
+          </div>
+
+          <div class="studio-scene">
+            <div id="studentAvatar" class="avatar male" aria-label="Architecture student avatar">
+              <div class="hair"></div>
+              <div class="head"></div>
+              <div class="body"></div>
+              <div class="arm"></div>
+              <div class="scalebar" aria-hidden="true"></div>
+            </div>
+
+            <div class="desk-zone" aria-label="Architecture desk scene">
+              <div class="desk-top">
+                <div class="obj laptop"></div>
+                <div class="obj lamp"></div>
+                <div class="obj mat"></div>
+                <div class="obj foam"></div>
+                <div class="obj trace"></div>
+                <div class="obj tools"></div>
+              </div>
+            </div>
+          </div>
+
+          <p id="statusText" class="status-text">Ready for studio day.</p>
+        </section>
+
+        <section class="card stats-panel">
+          <h3>Student Stats</h3>
+          <div id="statsContainer" class="stats"></div>
+        </section>
+
+        <section class="card actions-panel">
+          <h3>Support Actions</h3>
+          <div id="actionsContainer" class="actions-grid"></div>
+        </section>
+
+        <section class="card minigame-panel">
+          <h3>Mini Game: Bubble Breather</h3>
+          <p>Pop bubbles for 8 seconds to reduce stress.</p>
+          <div class="mini-controls">
+            <button id="startMiniBtn" class="btn">Start</button>
+            <span id="miniScore">Score: 0</span>
+            <span id="miniTimer">Time: 0</span>
+          </div>
+          <div id="miniArea" class="mini-area" aria-label="Mini game area"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="endScreen" class="card end-screen hidden">
+      <h2 id="endTitle"></h2>
+      <p id="endMessage"></p>
+      <button id="restartBtn" class="btn btn-primary">Play Again</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
